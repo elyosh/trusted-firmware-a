@@ -361,6 +361,8 @@ enum boot_device get_boot_dev(void)
 		INFO("RCW BOOT SRC is EMMC\n");
 		break;
 	default:
+		src = BOOT_DEVICE_SEMIHOSTING;
+		INFO("RCW BOOT SRC is SEMIHOSTING\n");
 		break;
 	}
 
