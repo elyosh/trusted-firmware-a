@@ -31,21 +31,21 @@ INCLUDE_PATHS :=
 all: create_pbl byte_swap
 
 ${PROJECT_1}: ${OBJECTS_1} Makefile
-	$(s)echo "  LD      $@"
+	$(s)echo "  HOSTLD      $@"
 	$(q)$(host-cc) ${OBJECTS_1} -o $@ ${LDLIBS}
 	$(s)echo
 	$(s)echo "Built $@ successfully"
 	$(s)echo
 
 ${PROJECT_2}: ${OBJECTS_2} Makefile
-	$(s)echo "  LD      $@"
+	$(s)echo "  HOSTLD      $@"
 	$(q)$(host-cc) ${OBJECTS_2} -o $@ ${LDLIBS}
 	$(s)echo
 	$(s)echo "Built $@ successfully"
 	$(s)echo
 
-%.o: %.c %.h Makefile
-	$(s)echo "  CC      $<"
+%.o: %.c Makefile
+	$(s)echo "  HOSTCC      $<"
 	$(q)$(host-cc) -c ${CPPFLAGS} ${CFLAGS} ${INCLUDE_PATHS} $< -o $@
 
 clean:
