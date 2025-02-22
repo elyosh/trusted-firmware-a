@@ -128,7 +128,7 @@ int ddr_board_options(struct ddr_info *priv)
 	popts->threet_en = 0;
 	popts->addt_lat_override = 0;
 	popts->addt_lat_override_value = 0;
-	popts->phy_atx_impedance = 30;
+	popts->phy_atx_impedance = 40;
 	popts->skip2d = 0;
 	popts->vref_dimm = U(0x19);		/* range 1, 83.4% */
 
@@ -143,10 +143,11 @@ int ddr_board_options(struct ddr_info *priv)
 	popts->twrt = 0x3;
 	popts->trrt = 0x3;
 	popts->twwt = 0x3;
-	popts->vref_phy = U(0x5D);		/* 72% */
-	popts->odt = 60U;
-	popts->phy_tx_impedance = 28U;
-
+	popts->vref_phy = U(0x60);		/* 72% */
+	//popts->odt = 60U;
+	//popts->phy_tx_impedance = 28U;
+	popts->odt = 48;
+	popts->phy_tx_impedance = 48;
 	return 0;
 }
 
